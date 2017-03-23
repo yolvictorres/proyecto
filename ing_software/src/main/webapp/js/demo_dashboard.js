@@ -69,9 +69,9 @@ $(function(){
     Morris.Donut({
         element: 'dashboard-donut-1',
         data: [
-            {label: "Returned", value: 2513},
-            {label: "New", value: 764},
-            {label: "Registred", value: 311}
+            {label: "Mis Acciones", value: 2513},
+            {label: "Mis Ventas", value: 764},
+            {label: "Mis Compras", value: 311}
         ],
         colors: ['#33414E', '#1caf9a', '#FEA223'],
         resize: true
@@ -83,17 +83,17 @@ $(function(){
     Morris.Bar({
         element: 'dashboard-bar-1',
         data: [
-            { y: 'Oct 10', a: 75, b: 35 },
-            { y: 'Oct 11', a: 64, b: 26 },
-            { y: 'Oct 12', a: 78, b: 39 },
-            { y: 'Oct 13', a: 82, b: 34 },
-            { y: 'Oct 14', a: 86, b: 39 },
-            { y: 'Oct 15', a: 94, b: 40 },
-            { y: 'Oct 16', a: 96, b: 41 }
+            { y: 'Marzo 10', a: 75, b: 35 },
+            { y: 'Marzo 11', a: 64, b: 26 },
+            { y: 'Marzo 12', a: 78, b: 39 },
+            { y: 'Marzo 13', a: 50, b: 34 },
+            { y: 'Marzo 14', a: 32, b: 39 },
+            { y: 'Marzo 15', a: 30, b: 40 },
+            { y: 'Marzo 16', a: 10, b: 41 }
         ],
         xkey: 'y',
         ykeys: ['a', 'b'],
-        labels: ['New Users', 'Returned'],
+        labels: ['Alza', 'Baja'],
         barColors: ['#33414E', '#1caf9a'],
         gridTextSize: '10px',
         hideHover: true,
@@ -106,17 +106,17 @@ $(function(){
     Morris.Line({
       element: 'dashboard-line-1',
       data: [
-        { y: '2014-10-10', a: 2,b: 4},
-        { y: '2014-10-11', a: 4,b: 6},
-        { y: '2014-10-12', a: 7,b: 10},
-        { y: '2014-10-13', a: 5,b: 7},
-        { y: '2014-10-14', a: 6,b: 9},
-        { y: '2014-10-15', a: 9,b: 12},
-        { y: '2014-10-16', a: 18,b: 20}
+        { y: '2017-03-10', a: 2,b: 4},
+        { y: '2017-03-11', a: 4,b: 6},
+        { y: '2017-03-12', a: 7,b: 10},
+        { y: '2017-03-13', a: 5,b: 7},
+        { y: '2017-03-14', a: 6,b: 9},
+        { y: '2017-03-15', a: 9,b: 12},
+        { y: '2017-03-16', a: 18,b: 20}
       ],
       xkey: 'y',
       ykeys: ['a','b'],
-      labels: ['Sales','Event'],
+      labels: ['Ventas','Compras'],
       resize: true,
       hideHover: true,
       xLabels: 'day',
@@ -129,17 +129,17 @@ $(function(){
       Morris.Area({
       element: 'dashboard-area-1',
       data: [
-        { y: '2014-10-10', a: 17,b: 19},
-        { y: '2014-10-11', a: 19,b: 21},
-        { y: '2014-10-12', a: 22,b: 25},
-        { y: '2014-10-13', a: 20,b: 22},
-        { y: '2014-10-14', a: 21,b: 24},
-        { y: '2014-10-15', a: 34,b: 37},
-        { y: '2014-10-16', a: 43,b: 45}
+        { y: '2016-03-10', a: 17,b: 19},
+        { y: '2016-03-11', a: 19,b: 21},
+        { y: '2016-03-12', a: 22,b: 25},
+        { y: '2016-03-13', a: 20,b: 22},
+        { y: '2016-03-14', a: 21,b: 24},
+        { y: '2016-03-15', a: 34,b: 37},
+        { y: '2016-03-16', a: 43,b: 45}
       ],
       xkey: 'y',
       ykeys: ['a','b'],
-      labels: ['Sales','Event'],
+      labels: ['Ventas','Compras'],
       resize: true,
       hideHover: true,
       xLabels: 'day',

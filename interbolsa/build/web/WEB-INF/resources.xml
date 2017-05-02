@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resources>
+  <Resource id="interbolsa" type="javax.sql.DataSource">#Mon May 01 19:19:01 COT 2017
+jdbcDriver=com.mysql.jdbc.Driver
+password=
+userName=root
+jdbcUrl=jdbc\:mysql\://localhost\:3306/interbolsa
+</Resource>
+</resources>

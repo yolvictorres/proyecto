@@ -12,7 +12,7 @@ import javax.ws.rs.core.Application;
  *
  * @author DesarrolloMovil_1
  */
-@javax.ws.rs.ApplicationPath("webresources")
+@javax.ws.rs.ApplicationPath("services")
 public class ApplicationConfig extends Application {
 
     @Override
@@ -29,7 +29,11 @@ public class ApplicationConfig extends Application {
      * If required, comment out calling this method in getClasses().
      */
     private void addRestResourceClasses(Set<Class<?>> resources) {
-        resources.add(co.com.konrad.interbolsa.ws.Register.class);
+        resources.add(co.com.konrad.interbolsa.ws.AccionesDAOFacadeREST.class);
+        resources.add(co.com.konrad.interbolsa.ws.CompraAccionesDAOFacadeREST.class);
+        resources.add(co.com.konrad.interbolsa.ws.EmpresaDAOFacadeREST.class);
+        resources.add(co.com.konrad.interbolsa.ws.UsuarioDAOFacadeREST.class);
+        resources.add(co.com.konrad.interbolsa.ws.ValorAccionDAOFacadeREST.class);
     }
     
 }

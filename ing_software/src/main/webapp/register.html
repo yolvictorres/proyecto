@@ -9,7 +9,8 @@
         <link rel="icon" href="favicon.ico" type="image/x-icon" />
         <link href="https://fonts.googleapis.com/css?family=Abril+Fatface" rel="stylesheet">
         <link rel="stylesheet" type="text/css" id="theme" href="css/theme-default.css"/>
-        
+        <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+        <script src="js/app/register.js"></script>
         <!-- EOF CSS INCLUDE -->
     </head>
     <body>
@@ -17,8 +18,8 @@
             <div class="login-box animated fadeInDown">
                 <div class="login-logo">InterBolsa</div>
                 <div class="login-body">
-                    <div class="login-title"><strong>Ingrese</strong> con su cuenta</div>
-                    <form action="pages/dashboard.html" class="form-horizontal" method="post">
+                    <div class="login-title"><strong>Registrese</strong><p style="font-size: 12px;">Solo con unos pocos datos ya puede hacer parte, de la red de divisas mas grande del mundo.</p></div>
+                     <div class="form-horizontal">
                     <div class="form-group">
                         <div class="col-md-12">
                             <input type="text" class="form-control" placeholder="Correo"/>
@@ -30,17 +31,12 @@
                         </div>
                     </div>
                     <div class="form-group">
-                        <div class="col-md-6">
-                            <a href="#" class="btn btn-link btn-block">Olvidé mi clave?</a>
-                        </div>
-                        <div class="col-md-6">
-                            <button class="btn btn-info btn-block">Ingresar</button>
-                        </div>
+                            <button class="btn btn-info btn-block" onclick="guardar_registro()">Registrarme</button>
                     </div>
                     <div class="login-subtitle">
-                        No tienes cuenta? <a href="register.html">Crear cuenta</a>
+                        Ya tengo cuenta? <a href="index.html">Iniciar sesión</a>
                     </div>
-                    </form>
+                    </div>
                 </div>
                 <div class="login-footer">
                     <div class="pull-left">

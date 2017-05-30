@@ -5,14 +5,19 @@
  */
 package co.com.konrad.interbolsa.ws;
 
+import com.google.gson.JsonObject;
 import java.util.List;
+import java.util.logging.Level;
 import javax.persistence.EntityManager;
+import java.util.logging.Logger;
 
 /**
  *
  * @author ADGS
  */
 public abstract class AbstractFacade<T> {
+
+    private static Logger logger;
 
     private Class<T> entityClass;
 
@@ -22,8 +27,15 @@ public abstract class AbstractFacade<T> {
 
     protected abstract EntityManager getEntityManager();
 
-    public void create(T entity) {
-        getEntityManager().persist(entity);
+    public String create(T entity)throws Exception{
+        
+        try {
+            getEntityManager().persist(entity);
+            
+        } catch (Throwable ex) {
+
+        }
+        return "";
     }
 
     public void edit(T entity) {
@@ -60,5 +72,5 @@ public abstract class AbstractFacade<T> {
         javax.persistence.Query q = getEntityManager().createQuery(cq);
         return ((Long) q.getSingleResult()).intValue();
     }
-    
+
 }

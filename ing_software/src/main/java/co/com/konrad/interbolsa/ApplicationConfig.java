@@ -29,11 +29,11 @@ public class ApplicationConfig extends Application {
      * If required, comment out calling this method in getClasses().
      */
     private void addRestResourceClasses(Set<Class<?>> resources) {
-        resources.add(co.com.konrad.interbolsa.ws.AccionesDAOFacadeREST.class);
-        resources.add(co.com.konrad.interbolsa.ws.CompraAccionesDAOFacadeREST.class);
-        resources.add(co.com.konrad.interbolsa.ws.EmpresaDAOFacadeREST.class);
-        resources.add(co.com.konrad.interbolsa.ws.UsuarioDAOFacadeREST.class);
-        resources.add(co.com.konrad.interbolsa.ws.ValorAccionDAOFacadeREST.class);
+        resources.add(co.com.konrad.interbolsa.ws.AccionesFacadeREST.class);
+        resources.add(co.com.konrad.interbolsa.ws.CompraAccionesFacadeREST.class);
+        resources.add(co.com.konrad.interbolsa.ws.EmpresaFacadeREST.class);
+        resources.add(co.com.konrad.interbolsa.ws.UsuarioFacadeREST.class);
+        resources.add(co.com.konrad.interbolsa.ws.ValorAccionFacadeREST.class);
     }
     
 }

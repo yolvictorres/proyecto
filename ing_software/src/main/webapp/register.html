@@ -11,27 +11,98 @@
         <link rel="stylesheet" type="text/css" id="theme" href="css/theme-default.css"/>
         <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
         <script src="js/app/register.js"></script>
+        <script src="js/app/utils.js"></script>
         <!-- EOF CSS INCLUDE -->
     </head>
     <body>
         <div class="login-container">
             <div class="login-box animated fadeInDown">
                 <div class="login-logo">InterBolsa</div>
-                <div class="login-body">
-                    <div class="login-title"><strong>Registrese</strong><p style="font-size: 12px;">Solo con unos pocos datos ya puede hacer parte, de la red de divisas mas grande del mundo.</p></div>
+                <div class="login-body" id="register_empresa">
+                    <div class="login-title"><strong>Registre su empresa</strong><p style="font-size: 12px;">Solo con unos pocos datos ya puede hacer parte, de la red de divisas mas grande del mundo.</p></div>
+                    <div class="login-title" id="error_div" style="display: none"><b style="font-size: 12px; color:yellow;" id="error_sms"></b></div>
                      <div class="form-horizontal">
                     <div class="form-group">
                         <div class="col-md-12">
-                            <input type="text" class="form-control" placeholder="Correo"/>
+                            <input id="nit" type="text" class="form-control" placeholder="Nit de la empresa"/>
                         </div>
                     </div>
                     <div class="form-group">
                         <div class="col-md-12">
-                            <input type="password" class="form-control" placeholder="Clave"/>
+                            <input id="nombre" type="text" class="form-control" placeholder="Nombre de la empresa"/>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-md-12">
+                            <input id="telefono" type="number" class="form-control" placeholder="Telefono de la empresa"/>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-md-12">
+                            <input id="direccion" type="text" class="form-control" placeholder="Dirección de la empresa"/>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-md-12">
+                            <select id="sociedad" class="form-control select" style="background:white; color:black">
+                                <option value="" selected disabled>Seleccione el tipo de Sociedad</option>
+                                <option value="LTDA">Limitada</option>
+                                <option value="S.A.">Sociedad Anonima</option>
+                                <option value="Comandita">Comandita</option>
+                                <option value="S.A.S">Sociedad Anonima Simple</option>
+                            </select>
                         </div>
                     </div>
                     <div class="form-group">
                             <button class="btn btn-info btn-block" onclick="guardar_registro()">Registrarme</button>
+                    </div>
+                    <div class="login-subtitle">
+                        Ya tengo cuenta? <a href="index.html">Iniciar sesión</a>
+                    </div>
+                    </div>
+                </div>
+                <div class="login-body" id="register_login" style="display: none">
+                    <div class="login-title"><strong>Registre el usuario Administrador</strong><p style="font-size: 12px;">Para poder ingresar a la plataforma debes crear el usuario que administrará toda tu empresa en Interbolsa.</p></div>
+                    <div class="login-title" id="error_div_user" style="display: none"><b style="font-size: 12px; color:yellow;" id="error_sms_user"></b></div>
+                     <div class="form-horizontal">
+                    <div class="form-group">
+                        <div class="col-md-12">
+                            <input id="usuario_nombre" type="text" class="form-control" placeholder="Nombre del Administrador"/>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-md-12">
+                            <input id="usuario_apellido" type="text" class="form-control" placeholder="Apellido del Administrador"/>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-md-12">
+                            <input id="usuario_cedula" type="number" class="form-control" placeholder="Cédula del Administrador"/>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-md-12">
+                            <input id="usuario_correo" type="email" class="form-control" placeholder="correo del Administrador"/>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-md-12">
+                            <input id="usuario_telefono" type="text" class="form-control" placeholder="Teléfono del Administrador"/>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-md-12">
+                            <label for="usuario_clave" style="color:white">(*) La clave debe contener minimo 8 caracteres, debe ser alfanúmerica.</label>
+                            <input id="usuario_clave" type="password" class="form-control" placeholder="Clave del Administrador"/>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-md-12">
+                            <input id="usuario_clave_2" type="password" class="form-control" placeholder="Repita la clave del Administrador"/>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                            <button class="btn btn-info btn-block" onclick="guardar_usuario()">Guardar Usuario</button>
                     </div>
                     <div class="login-subtitle">
                         Ya tengo cuenta? <a href="index.html">Iniciar sesión</a>

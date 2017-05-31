@@ -12,7 +12,7 @@ guardar_acciones = function(){
         };
 
         $.ajax({
-            url: "services/acciones/create",
+            url: "../services/acciones/create",
             data: JSON.stringify(objectSend),
             contentType:'application/json ; charset=utf-8',
             dataType : 'json',

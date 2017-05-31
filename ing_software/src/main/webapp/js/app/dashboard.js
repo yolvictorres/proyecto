@@ -13,3 +13,24 @@ cerrar_sesion = function(){
     sessionStorage.clear();
     window.location.href = '../index.html';
 };
+
+//
+
+acciones = function(){
+    
+    
+    $.ajax({
+            url: "create_acccions.html",
+            type: 'GET',
+            beforeSend: function () {
+
+            },
+            success: function (response) {
+               $("#content").html(response);
+            }, error: function (response) {
+                console.log(response);
+                /*$('#error_div').show();
+                $('#error_sms').html("Se produjo un error desconocido.");*/
+            }
+        });
+};

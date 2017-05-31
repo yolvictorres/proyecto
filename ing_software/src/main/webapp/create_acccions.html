@@ -9,47 +9,69 @@
         <link rel="icon" href="favicon.ico" type="image/x-icon" />
         <link href="https://fonts.googleapis.com/css?family=Abril+Fatface" rel="stylesheet">
         <link rel="stylesheet" type="text/css" id="theme" href="css/theme-default.css"/>
-        
+        <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+        <script src="js/app/create_accions.js"></script>
         <!-- EOF CSS INCLUDE -->
     </head>
     <body>
-        <div class="login-container">
-            <div class="login-box animated fadeInDown">
-                <div class="login-logo">InterBolsa</div>
-                <div class="login-body">
-                    <div class="login-title"><strong>Ingrese</strong> con su cuenta</div>
-                    <form action="pages/dashboard.html" class="form-horizontal" method="post">
-                    <div class="form-group">
-                        <div class="col-md-12">
-                            <input type="text" class="form-control" placeholder="Correo"/>
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <div class="col-md-12">
-                            <input type="password" class="form-control" placeholder="Clave"/>
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <div class="col-md-6">
-                            <a href="#" class="btn btn-link btn-block">Olvidé mi clave?</a>
-                        </div>
-                        <div class="col-md-6">
-                            <button class="btn btn-info btn-block">Ingresar</button>
-                        </div>
-                    </div>
-                    <div class="login-subtitle">
-                        No tienes cuenta? <a href="register.html">Crear cuenta empresarial</a>
-                    </div>
-                    </form>
-                </div>
-                <div class="login-footer">
-                    <div class="pull-left">
-                        &copy; 2017 Interbolsa
-                    </div>
-                </div>
-            </div>
+<div class="page-content-wrap">
 
-        </div>
+                   <div class="row">
+                       <div class="col-md-12">
+                           <form class="form-horizontal">
+                           <div class="panel panel-default">
+                               <div class="panel-heading">
+                                   <h3 class="panel-title"><strong>Registro</strong> Acciones</h3>
+                                   <ul class="panel-controls">
+                                       <li><a href="#" class="panel-remove"><span class="fa fa-times"></span></a></li>
+                                   </ul>
+                               </div>
+                               <div class="panel-body">
+                                   <p>En este formulario podra crear todas las acciones que ofertara</p>
+                               </div>
+                               <div class="panel-body">                                                                        
 
+                                   <div class="form-group">
+                                       <label class="col-md-3 col-xs-12 control-label">Número de acciones</label>
+                                       <div class="col-md-6 col-xs-12">                                            
+                                           <div class="input-group">
+                                               <span class="input-group-addon" ><span class="fa fa-pencil"></span></span>
+                                               <input id="accion_cantidad" name="accion_condicion" type="text" class="form-control"/>
+                                           </div>                                            
+                                           <span class="help-block">Ingrese la cantidad de opciones que ofertara</span>
+                                       </div>
+                                   </div>
+                                   <div class="form-group">
+                                       <label class="col-md-3 col-xs-12 control-label">A quien le desea vender las acciones</label>
+                                       <div class="col-md-6 col-xs-12">                                                                                            
+                                           <select class="form-control select" id="accion_vender_A" name="accion_vender_A">
+                                               <option value="1">Persona Juridica</option>
+                                               <option value="2">Persona Natural</option>
+                                               <option value="0">Todos</option>
+                                           </select>
+                                       </div>
+                                   </div>
+                                   <div class="form-group">
+                                       <label class="col-md-3 col-xs-12 control-label">Vender solo a clientes con acciones mayor a :</label>
+                                       <div class="col-md-6 col-xs-12">                                            
+                                           <div class="input-group">
+                                               <span class="input-group-addon"><span class="fa fa-pencil"></span></span>
+                                               <input id="accion_condicion" name="accion_condicion" type="text" class="form-control"/>
+                                           </div>                                            
+                                           <span class="help-block">Seleccione el limite minimo de accciones que tendra su comprador</span>
+                                       </div>
+                                   </div>                                   
+                                   
+                               </div>
+                               <div class="panel-footer">                                  
+                                   <span class="btn btn-primary pull-right" onclick="guardar_acciones()">Registrar</span>
+                               </div>
+                           </div>
+                           </form>
+
+                       </div>
+                   </div>                    
+
+               </div>
     </body>
 </html>

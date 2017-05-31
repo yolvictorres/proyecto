@@ -76,7 +76,8 @@ guardar_usuario = function(){
                 success: function (response) {
                     console.log(response);
                     if(response.codigo === 200){
-                        
+                        sessionStorage.setItem('usuario', JSON.stringify(response.data));
+                        window.location.href ='pages/dashboard.html';
                     }else{
                         $('#error_div_user').show();
                         $('#error_sms_user').html(response.mensaje);

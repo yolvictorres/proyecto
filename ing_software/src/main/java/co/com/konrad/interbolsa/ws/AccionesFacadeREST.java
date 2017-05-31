@@ -6,6 +6,7 @@
 package co.com.konrad.interbolsa.ws;
 
 import co.com.konrad.interbolsa.entities.Acciones;
+import com.google.gson.Gson;
 import com.google.gson.JsonObject;
 import java.util.List;
 import java.util.logging.Level;
@@ -27,7 +28,7 @@ import javax.ws.rs.core.MediaType;
  * @author ADGS
  */
 @Stateless
-@Path("co.com.konrad.interbolsa.entities.acciones")
+@Path("acciones")
 public class AccionesFacadeREST extends AbstractFacade<Acciones> {
 
     @PersistenceContext(unitName = "interbolsaPU")
@@ -39,22 +40,38 @@ public class AccionesFacadeREST extends AbstractFacade<Acciones> {
 
     @POST
     @Override
+    @Path("create")
     @Consumes({MediaType.APPLICATION_XML, MediaType.APPLICATION_JSON})
     public String create(Acciones entity) throws Exception{
                 //VAriable json
         JsonObject res = new JsonObject();
+        Gson gson = new Gson();
         try {
             //retorno
             res.addProperty("codigo", 200);
             res.addProperty("mensaje", "operacion exitosa");
             super.create(entity);
-        } catch (Throwable ex) {
+            
+            
+            javax.persistence.criteria.CriteriaBuilder cb = getEntityManager().getCriteriaBuilder();
+            javax.persistence.criteria.CriteriaQuery cq = cb.createQuery();
+            javax.persistence.criteria.Root<Acciones> rt = cq.from(Acciones.class);
+            /*cq.where(
+                    cb.equal(rt.get(Empresa_.empresaNit), entity.getEmpresaNit())
+            );*/
+            javax.persistence.TypedQuery<Acciones> q = getEntityManager().createQuery(cq);
+            Acciones acciones = q.getSingleResult();
+            res.add("data", gson.toJsonTree(acciones));
+            
+        } catch (Exception ex) {
               java.util.logging.Logger.getLogger(AbstractFacade.class.getName()).
                     log(Level.SEVERE, "Erro guardando entidad", ex);
                                      res.addProperty("codigo", 400);
             res.addProperty("mensaje", "operacion fallida");
         }
-        return res.toString();
+        //return res.toString();
+        return "{'hola':1}";
+        
     }
 
     @PUT

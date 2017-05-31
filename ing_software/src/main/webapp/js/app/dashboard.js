@@ -17,20 +17,35 @@ cerrar_sesion = function(){
 //
 
 acciones = function(){
-    
-    
-    $.ajax({
-            url: "create_acccions.html",
-            type: 'GET',
-            beforeSend: function () {
+   $.ajax({
+        url: "create_acccions.html",
+        type: 'GET',
+        beforeSend: function () {
 
-            },
-            success: function (response) {
-               $("#content").html(response);
-            }, error: function (response) {
-                console.log(response);
-                /*$('#error_div').show();
-                $('#error_sms').html("Se produjo un error desconocido.");*/
-            }
-        });
+        },
+        success: function (response) {
+           $("#content").html(response);
+        }, error: function (response) {
+            console.log(response);
+            /*$('#error_div').show();
+            $('#error_sms').html("Se produjo un error desconocido.");*/
+        }
+    });
+};
+
+historial = function(){
+    $.ajax({
+        url: "historico.html",
+        type: 'GET',
+        beforeSend: function () {
+
+        },
+        success: function (response) {
+           $("#content").html(response);
+        }, error: function (response) {
+            console.log(response);
+            /*$('#error_div').show();
+            $('#error_sms').html("Se produjo un error desconocido.");*/
+        }
+    });
 };

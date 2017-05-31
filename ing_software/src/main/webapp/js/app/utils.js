@@ -62,3 +62,12 @@ validarVaciosUsuario = function(usuario){
     }
     return true;
 };
+
+validarVaciosLogin = function (usuario){
+    if(usuario.usuarioCorreo === ''){
+        return false;
+    }else if(usuario.usuairoClave === ''){
+        return false;
+    }
+    return true;
+};

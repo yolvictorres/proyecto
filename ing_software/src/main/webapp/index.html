@@ -9,7 +9,9 @@
         <link rel="icon" href="favicon.ico" type="image/x-icon" />
         <link href="https://fonts.googleapis.com/css?family=Abril+Fatface" rel="stylesheet">
         <link rel="stylesheet" type="text/css" id="theme" href="css/theme-default.css"/>
-        
+        <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+        <script src="js/app/index.js"></script>
+        <script src="js/app/utils.js"></script>
         <!-- EOF CSS INCLUDE -->
     </head>
     <body>
@@ -18,15 +20,16 @@
                 <div class="login-logo">InterBolsa</div>
                 <div class="login-body">
                     <div class="login-title"><strong>Ingrese</strong> con su cuenta</div>
-                    <form action="pages/dashboard.html" class="form-horizontal" method="post">
+                    <div class="login-title" id="error_div" style="display: none"><b style="font-size: 12px; color:yellow;" id="error_sms"></b></div>
+                    <div class="form-horizontal">
                     <div class="form-group">
                         <div class="col-md-12">
-                            <input type="text" class="form-control" placeholder="Correo"/>
+                            <input type="text" id="usuario_correo" class="form-control" placeholder="Correo"/>
                         </div>
                     </div>
                     <div class="form-group">
                         <div class="col-md-12">
-                            <input type="password" class="form-control" placeholder="Clave"/>
+                            <input type="password" id="usuario_clave" class="form-control" placeholder="Clave"/>
                         </div>
                     </div>
                     <div class="form-group">
@@ -34,13 +37,13 @@
                             <a href="#" class="btn btn-link btn-block">Olvidé mi clave?</a>
                         </div>
                         <div class="col-md-6">
-                            <button class="btn btn-info btn-block">Ingresar</button>
+                            <button class="btn btn-info btn-block" onclick="iniciar_sesion()">Ingresar</button>
                         </div>
                     </div>
                     <div class="login-subtitle">
                         No tienes cuenta? <a href="register.html">Crear cuenta empresarial</a>
                     </div>
-                    </form>
+                    </div>
                 </div>
                 <div class="login-footer">
                     <div class="pull-left">

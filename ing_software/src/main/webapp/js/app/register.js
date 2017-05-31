@@ -59,7 +59,7 @@ guardar_usuario = function(){
             "usuarioCorreo": $("#usuario_correo").val(),
             "usuarioTelefono": $("#usuario_telefono").val(),
             "usuairoClave": $("#usuario_clave").val(),
-            "usuarioTipo":"A",
+            "usuarioTipo":"AD",
             "usuarioPersona" : "J",
             "empresaEmpresaId" : empresa
         };
